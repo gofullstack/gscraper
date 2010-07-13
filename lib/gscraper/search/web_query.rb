@@ -416,7 +416,7 @@ module GScraper
             result = results[index]
 
             rank = rank_offset + (index + 1)
-            link = result.at('h3.r/a')
+            next unless link = result.at('h3.r/a')
             title = link.inner_text
             url = URI(link.get_attribute('href'))
             summary_text = ''
